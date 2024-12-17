@@ -1,12 +1,19 @@
-function getRandomElement(array){
-const RandomIndex=Math.floor(Math.random()*array.lenghth)
-return array[RandomIndex]
-}
-function makePhrases() {
-    const words1 = ["My cat", "My dog", "My parrot"];
-    const words2 = ["loves to eat", "wants to chew", "always looking"];
-    const words3 = ["carrot", "pasta", "bone"];
-        return getRandomElemen(words1)+" "+getRandomElemen(words)+" "+getRandomElemen(words3)
+
+
+
+function getRandomElement(data) {
+    const randInd = Math.floor(Math.random() * data.lenghth)
+    return data[randInd]
 }
 
-alert(makePhrases())
+const prases1 = ["dsfdft", "dsaga", "dfgdsg"];
+const prases2 = ["ldfsgt", "tvrcdw", "fhdh"];
+const prases3 = ["cfdht", "pfdhta", "bondfhe"];
+
+function makePhrases(par1, par2, par3) {
+    const result = getRandomElement(par1)+getRandomElement(par2)+getRandomElement(par3)
+    return result
+}
+
+
+alert(makePhrases(prases1, prases2, prases3))
