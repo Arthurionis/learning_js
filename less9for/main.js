@@ -1,6 +1,6 @@
 const scores = [78, 68, 45, 61, 46, 49, 63, 50, 55, 45, 69, 59, 80, 69, 77, 66, 46, 50, 53,
     79, 55, 57, 65, 49, 42, 54, 47, 80, 40, 44, 43, 68, 52, 79, 56, 33]
-const costs = [27,28, 22, 26, 30, 29, 22, 26, 23, 26, 26, 24, 22, 29, 29, 24, 22, 27, 27,
+const costs = [27, 28, 22, 26, 30, 29, 22, 26, 23, 26, 26, 24, 22, 29, 29, 24, 22, 27, 27,
     22, 29, 26, 24, 27, 23, 26, 28, 24, 29, 28, 23, 29, 23, 22, 24, 24]
 
 function getAndPrintHighScores(array) {
@@ -26,18 +26,12 @@ function getNumbersBestScores(ara, value) {
     return bestScores
 }
 
-function getMostCostEffectiveSolution(resultsCosts, costsArray, MaxVal) {
+function getMostCostEffectiveSolution(resultsCosts, costsArray, MaxValue) {
     let index;
-    let costEt = 100;
-    for (let i = 0; i < resultsCosts.length; i++) {
-        if (resultsCosts[i] === MaxVal) {
-            if (costsArray[i] < costEt) {
-                costEt = costsArray[i]
-                index = i
-            }
-        }
-
-    }
+    const bestsolutions = getNumbersBestScores(resultsCosts, MaxValue)
+    if (costsArray[bestsolutions[0]] < costsArray[bestsolutions[1]]) {
+        index = bestsolutions[0]
+    } else { index = bestsolutions[1] }
     return index
 }
 
@@ -47,6 +41,6 @@ const MostCost = getMostCostEffectiveSolution(scores, costs, highScore)
 console.log("All tets: " + scores.length)
 console.log("Highest score: " + highScore)
 console.log("solutions with highest score:  " + bestScores);
-console.log("Buble solutions # "+MostCost+" is the most cost effective");
+console.log("Buble solutions # " + MostCost + " is the most cost effective");
 
 
